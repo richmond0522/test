@@ -1,0 +1,22 @@
+import datetime
+import time
+import winsound
+
+def set_alarm(alarm_time):
+    while True:
+        current_time = datetime.datetime.now().strftime("%H:%M:%S")
+        if current_time == alarm_time:
+            print("时间到！")
+            # 播放声音提示
+            winsound.Beep(1000, 2000)
+            break
+        time.sleep(1)
+
+def main():
+    alarm_time = input("请设置闹钟时间（格式为HH:MM:SS）：")
+    print("闹钟已设置为：" + alarm_time)
+    set_alarm(alarm_time)
+
+if __name__ == "__main__":
+    main()
+
